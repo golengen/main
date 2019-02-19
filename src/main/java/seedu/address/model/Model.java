@@ -89,6 +89,11 @@ public interface Model {
      */
     String getAllTagsString();
 
+    /**
+     * Counts number of tags in AddressBook.
+     */
+    int countTags();
+
     /** Returns an unmodifiable view of the filtered person list */
     ObservableList<Person> getFilteredPersonList();
 
