@@ -22,15 +22,15 @@ public class PutCommandParser implements Parser<PutCommand> {
      */
     public PutCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_COORDINATE);
+                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_COORDINATE);
 
-        if (!arePrefixesPresent(argMultimap, PREFIX_COORDINATE)
+        if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_COORDINATE)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, PutCommand.MESSAGE_USAGE));
         }
 
 
-        Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_COORDINATE).get());
+        Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
         Battleship battleship = new Battleship(name, 2, 1);
 
         return new PutCommand(battleship);

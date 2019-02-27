@@ -2,6 +2,7 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_COORDINATE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 
 import seedu.address.logic.CommandHistory;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -18,12 +19,14 @@ public class PutCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Puts a battleship on the map. "
             + "Parameters: "
+            + PREFIX_NAME + "NAME "
             + PREFIX_COORDINATE + "COORDINATE "
             + "\n"
             + "Example: " + COMMAND_WORD + " "
+            + PREFIX_NAME + "RSS Vengeance "
             + PREFIX_COORDINATE + "a1 ";
 
-    public static final String MESSAGE_SUCCESS = "Battleship put: %1$s";
+    public static final String MESSAGE_SUCCESS = "Battleship put at: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "There is already a battleship at the coordinate";
 
     private final Battleship toAdd;
