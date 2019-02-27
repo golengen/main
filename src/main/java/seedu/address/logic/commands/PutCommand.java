@@ -19,6 +19,7 @@ public class PutCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Puts a battleship on the map. "
             + "Parameters: "
             + PREFIX_COORDINATE + "COORDINATE "
+            + "\n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_COORDINATE + "a1 ";
 

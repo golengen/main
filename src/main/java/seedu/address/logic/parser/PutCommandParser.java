@@ -30,7 +30,7 @@ public class PutCommandParser implements Parser<PutCommand> {
         }
 
 
-        Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
+        Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_COORDINATE).get());
         Battleship battleship = new Battleship(name, 2, 1);
 
         return new PutCommand(battleship);
